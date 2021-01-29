@@ -1,0 +1,56 @@
+This was my first take with FastAPI.
+
+Concepts pretty straight forward.
+
+All downloads inside requirement.txt
+
+Application was built using the FastAPI documentation.
+
+App is just a simple vet app that holds details of pets and their owners.
+
+API endpoint to be consumed:
+	POST pet details
+	GET pet details using pet ID
+	POST owner details
+	GET pet details using owner's name.
+
+
+project structure:
+
+
+	sql_app
+	  |--crud.py
+	  |--database.py
+	  |--model.py
+	  |--scheme.py
+	  |--main.py
+	  |--other files
+
+
+crud.py:
+
+Contains all my possible action function (CRUD = Create, Read, Update, Delete)
+
+database.py:
+
+Contains all database connections and initalization
+
+model.py:
+Contains the idea for how the database should be(the relation between tables and the columns each table should have)
+
+scheme.py
+
+This should have been schemas.py.
+
+This holds or represents the structure data should be presented to or from the database.
+
+main.py:
+brings everything together.
+Holds all our path functions
+
+
+Key Technologies used:
+SQLAlchemy for Object Relational Mapping(ORM)
+Alembic for database Migration.
+FastApi as the backend framework
+
