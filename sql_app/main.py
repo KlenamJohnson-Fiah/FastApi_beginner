@@ -16,10 +16,6 @@ model.Base.metadata.create_all(bind=engine)
 
 app=FastAPI()
 
-#oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAYlOp1DatI1e2et1IeZRewV9R2E8HQbro")
-
-#https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAYlOp1DatI1e2et1IeZRewV9R2E8HQbro")
-
 
 def get_db():
     db = SessionLocal()
@@ -53,9 +49,3 @@ def read_pet_using_user_name(owner_name:str=Path(...), db: Session = Depends(get
     if db_owner==[] :
         raise HTTPException(status_code=404, detail="can't find pets with that name")
     return db_owner
-"""
-@app.get("/identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAYlOp1DatI1e2et1IeZRewV9R2E8HQbro/")
-def login(email: str , password:str, form_data: OAuth2PasswordRequestForm = Depends()):
-    return "worked"
-
-"""
